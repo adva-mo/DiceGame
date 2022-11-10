@@ -1,0 +1,11 @@
+.wins-chart-container,
+.player-select-container {
+  flex-grow: 1;
+}
+.landing-page {
+  height: 100vh;
+}
+.main-content {
+  width: 100%;
+  height: 80%;
+}
