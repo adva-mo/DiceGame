@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import Player from "./components/Player";
-import ButtonsWraper from "./components/ButtonsWraper";
 
 import "./gamePage.css";
 import Cube from "./components/Cube";
 
-function GamePage({ SetDisplayedPage, setp1turn, p1turn, target, setRound }) {
+function GamePage({
+  SetDisplayedPage,
+  setp1turn,
+  p1turn,
+  setRound,
+  names,
+  numberOfCubes,
+}) {
   const [p1currentPoints, setP1currentPoints] = useState(0);
   const [p2currentPoints, setP2currentPoints] = useState(0);
   const [p1totalPoints, setP1totalPoints] = useState(0);
@@ -13,32 +19,35 @@ function GamePage({ SetDisplayedPage, setp1turn, p1turn, target, setRound }) {
 
   const app = {
     player1: {
-      name: "player 1",
+      name: names[0],
       totalPoints: p1totalPoints,
       currentPoints: p1currentPoints,
     },
     player2: {
-      name: "player 2",
+      name: names[1],
       totalPoints: p2totalPoints,
       currentPoints: p2currentPoints,
     },
   };
 
-  const numberOfCubes = 2;
+  const backToSettingsHandler = () => {
+    SetDisplayedPage((perv) => null);
+  };
 
   return (
     <>
-      {/* {(setP1totalPoints((prev) => 0), setP2totalPoints((prev) => 0))} */}
       <div className="flex-row">
         <Player key={"p1"} {...app.player1} setp1turn={setp1turn} />
-        <ButtonsWraper SetDisplayedPage={SetDisplayedPage} />
+        <button id="back-to-chart" onClick={backToSettingsHandler}>
+          back to settings
+        </button>
         <Player key={"p2"} {...app.player2} setp1turn={setp1turn} />
       </div>
       <div className="cubes-container flex-row">
         <Cube
           {...(p1turn ? app.player1 : app.player2)}
           numberOfCubes={numberOfCubes}
-          target={target}
+          target={names[2]}
           p1turn={p1turn}
           setp1turn={setp1turn}
           setP1totalPoints={setP1totalPoints}

@@ -9,20 +9,27 @@ function App() {
   const [p1turn, setp1turn] = useState(true);
   const [round, setRound] = useState(0);
 
-  const target = 100;
+  const [names, setNames] = useState({
+    player1: null,
+    player2: null,
+    target: null,
+    numberOfCubes: null,
+  });
 
   return (
     <>
       {displayedPage ? (
         <GampePage
+          names={Object.values(names)}
           SetDisplayedPage={SetDisplayedPage}
           p1turn={p1turn}
           setp1turn={setp1turn}
-          target={target}
+          target={names[2]}
+          numberOfCubes={names.numberOfCubes}
           setRound={setRound}
         />
       ) : (
-        <LandingPage SetDisplayedPage={SetDisplayedPage} />
+        <LandingPage SetDisplayedPage={SetDisplayedPage} setNames={setNames} />
       )}
     </>
   );

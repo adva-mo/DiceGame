@@ -3,7 +3,6 @@ import getRandom1to6 from "../../utils/utils";
 
 function Cube({
   numberOfCubes,
-  p1turn,
   setp1turn,
   setTotalPoints,
   setCurrentPoints,
@@ -23,15 +22,21 @@ function Cube({
       cubes.push(dice);
       setCubes((prev) => [...cubes]);
     }
+    // console.log(cubes);
     displayCubes(cubes);
+    // displayCubes([6, 6, 6, 6, 6]);
   };
 
   const displayCubes = (arrOfPoints) => {
     const pointsPerRound = arrOfPoints.reduce((accumulator, value) => {
       return accumulator + value;
     }, 0);
-    if (pointsPerRound === 12)
+    if (arrOfPoints.every((val) => val === 6)) {
       console.log("6 double, empty current and switch turns");
+      setCurrentPoints((prev) => 0);
+      setp1turn((prev) => !prev);
+      return;
+    }
     setCurrentPoints((prev) => prev + pointsPerRound);
   };
 
@@ -40,9 +45,11 @@ function Cube({
     if (currentPoints + totalPoints > target) {
       console.log("you lost");
       newRound();
+      return;
     } else if (currentPoints + totalPoints === target) {
       console.log("you win");
       newRound();
+      return;
     }
     setTotalPoints((prev) => prev + currentPoints);
     setCurrentPoints((prev) => 0);
@@ -50,7 +57,7 @@ function Cube({
   };
 
   const newRound = () => {
-    //!add points to local storge
+    //!add points to local storge if winning
     setCurrentPoints((prev) => 0);
     setP1totalPoints((prev) => 0);
     setP2totalPoints((prev) => 0);
@@ -65,6 +72,9 @@ function Cube({
         </button>
         <button id="hold" onClick={holdHandler}>
           hold
+        </button>
+        <button id="new-game" onClick={newRound}>
+          new game
         </button>
       </div>
       <div className="flex-row">
