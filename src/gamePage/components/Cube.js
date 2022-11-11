@@ -79,7 +79,14 @@ function Cube({
       </div>
       <div className="flex-row">
         {cubes.map((number, i) => {
-          return <p key={i}>{number}</p>;
+          return (
+            <>
+              <img
+                key={i}
+                src={require(`../../Dice_Game_Starter/dice-${number}.png`)}
+              />
+            </>
+          );
         })}
       </div>
     </div>
