@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import getRandom1to6 from "../../utils/utils";
 
-function Cube({ numberOfCubes, setCurrent, setTotal }) {
+function Cube({
+  numberOfCubes,
+  setp1turn,
+  setTotalPoints,
+  setCurrentPoints,
+  currentPoints,
+}) {
   const [cubes, setCubes] = useState([]);
 
   const rollDiceHandler = () => {
@@ -11,21 +17,31 @@ function Cube({ numberOfCubes, setCurrent, setTotal }) {
       cubes.push(dice);
       setCubes((prev) => [...cubes]);
     }
-    updatePoints(cubes);
-    console.log(setCurrent);
+    displayCubes(cubes);
   };
 
-  const updatePoints = (points) => {
-    const pointsPerRound = points.reduce((accumulator, value) => {
+  const displayCubes = (arrOfPoints) => {
+    const pointsPerRound = arrOfPoints.reduce((accumulator, value) => {
       return accumulator + value;
     }, 0);
-    setCurrent((prev) => prev + pointsPerRound);
+    setCurrentPoints((prev) => prev + pointsPerRound);
   };
+
+  const holdHandler = () => {
+    if (currentPoints === 0) return;
+    setTotalPoints((prev) => prev + currentPoints);
+    setCurrentPoints((prev) => 0);
+    setp1turn((prev) => !prev);
+  };
+
   return (
     <div className="flex-column">
       <div className="">
         <button id="roll-dice" onClick={rollDiceHandler}>
           roll dice
+        </button>
+        <button id="hold" onClick={holdHandler}>
+          hold
         </button>
       </div>
       <div className="flex-row">

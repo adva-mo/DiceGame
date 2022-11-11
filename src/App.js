@@ -6,11 +6,18 @@ import "./App.css";
 
 function App() {
   const [displayedPage, SetDisplayedPage] = useState(null);
+  const [p1turn, setp1turn] = useState(true);
+  // const [round, setRound] = useState(0);
+  // const round = 0;
 
   return (
     <>
       {displayedPage ? (
-        <GampePage SetDisplayedPage={SetDisplayedPage} />
+        <GampePage
+          SetDisplayedPage={SetDisplayedPage}
+          p1turn={p1turn}
+          setp1turn={setp1turn}
+        />
       ) : (
         <LandingPage SetDisplayedPage={SetDisplayedPage} />
       )}

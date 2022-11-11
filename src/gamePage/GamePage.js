@@ -5,36 +5,52 @@ import ButtonsWraper from "./components/ButtonsWraper";
 import "./gamePage.css";
 import Cube from "./components/Cube";
 
-function GamePage({ SetDisplayedPage }) {
-  const [p1current, setP1current] = useState(0);
-  const [p2current, setP2current] = useState(0);
-  const [p1total, setP1total] = useState(0);
-  const [p2total, setP2total] = useState(0);
+function GamePage({ SetDisplayedPage, setp1turn, p1turn }) {
+  const [p1currentPoints, setP1currentPoints] = useState(0);
+  const [p2currentPoints, setP2currentPoints] = useState(0);
+  const [p1totalPoints, setP1totalPoints] = useState(0);
+  const [p2totalPoints, setP2totalPoints] = useState(0);
 
-  const [currentPlayer, setCurrentPlayer] = useState(null);
+  // let round = 0;
+  // setRound((prev) => prev + 1);
+  // console.log(round);
+
+  // const [p1turn, setp1turn] = useState(true);
+  // console.log(p1turn + " p1 turn");
+  // if (round % 2 == 0) {
+  //   setp1turn((prev) => !prev);
+  // }
 
   const app = {
-    player1: { name: "player 1", total: p1total, current: p1current },
-    player2: { name: "player 2", total: p2total, current: p2current },
+    player1: {
+      name: "player 1",
+      totalPoints: p1totalPoints,
+      currentPoints: p1currentPoints,
+    },
+    player2: {
+      name: "player 2",
+      totalPoints: p2totalPoints,
+      currentPoints: p2currentPoints,
+    },
   };
 
   const numberOfCubes = 2;
-  const target = 100;
+  // const target = 100;
 
   return (
     <>
       <div className="flex-row">
-        <Player key={"p1"} {...app.player1} />
+        <Player key={"p1"} {...app.player1} setp1turn={setp1turn} />
         <ButtonsWraper SetDisplayedPage={SetDisplayedPage} />
-        <Player key={"p2"} {...app.player2} />
+        <Player key={"p2"} {...app.player2} setp1turn={setp1turn} />
       </div>
       <div className="cubes-container flex-row">
         <Cube
-          currentPlayer={currentPlayer ? "player1" : "player2"}
-          setCurrentPlayer={setCurrentPlayer}
+          {...(p1turn ? app.player1 : app.player2)}
           numberOfCubes={numberOfCubes}
-          setCurrent={!currentPlayer ? setP1current : setP2current}
-          setTotal={!currentPlayer ? setP1total : setP2total}
+          setp1turn={setp1turn}
+          setCurrentPoints={p1turn ? setP1currentPoints : setP2currentPoints}
+          setTotalPoints={p1turn ? setP1totalPoints : setP2totalPoints}
         />
       </div>
     </>
