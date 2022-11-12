@@ -19,7 +19,6 @@ function GamePage({
   const [p1totalPoints, setP1totalPoints] = useState(0);
   const [p2totalPoints, setP2totalPoints] = useState(0);
   // const [globalPoints,setGlobalPoints]=useState([])
-  con;
   // console.log(setWins);
   const app = {
     player1: {
@@ -28,7 +27,6 @@ function GamePage({
       currentPoints: p1currentPoints,
       setP1totalPoints: setP1totalPoints,
       setP1currentPoints: setP1currentPoints,
-      g,
     },
     player2: {
       name: names[1],

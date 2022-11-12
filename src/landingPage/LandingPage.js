@@ -4,12 +4,12 @@ import PlayerSelect from "./components/PlayerSelect";
 
 import "./landingPage.css";
 
-function LandingPage({ SetDisplayedPage, setNames }) {
+function LandingPage({ SetDisplayedPage, setNames, loadWinsOnRefresh, wins }) {
   return (
     <div className="landing-page">
       <h1>welcome to the dice game!</h1>
       <div className="main-content flex-row">
-        <WinsChart />
+        <WinsChart loadWinsOnRefresh={loadWinsOnRefresh} wins={wins} />
         <PlayerSelect SetDisplayedPage={SetDisplayedPage} setNames={setNames} />
       </div>
     </div>
