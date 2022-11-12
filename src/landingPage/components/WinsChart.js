@@ -10,7 +10,7 @@ function WinsChart({ wins, setWins }) {
     if (storedWins) {
       setWins(storedWins);
     }
-  }, []);
+  }, [setWins]);
 
   return (
     <div className="wins-chart-container">

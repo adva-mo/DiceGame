@@ -123,6 +123,7 @@ function Cube({
             <>
               <img
                 className="dice-img"
+                alt="dice"
                 key={i}
                 src={require(`../../utils/dice-${number}.png`)}
               />
