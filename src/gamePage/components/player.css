@@ -5,10 +5,25 @@
   gap: 0.3rem;
 }
 .current-points-container {
-  margin-top: 1rem;
+  margin-top: 2rem;
   background-color: #890f0d;
   padding: 1rem;
   border-radius: 2px;
   color: #d9ce3f;
   font-size: larger;
+  width: 9rem;
+  text-align: center;
+}
+#wins-title {
+  color: #00c2c7;
+}
+h3 {
+  color: #630606;
+  margin-top: 0.5rem;
+}
+@media (max-width: 450px) {
+  .current-points-container {
+    width: 100%;
+    font-size: small;
+  }
 }

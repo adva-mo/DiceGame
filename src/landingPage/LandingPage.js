@@ -13,8 +13,8 @@ function LandingPage({
 }) {
   return (
     <div className="landing-page flex-column">
-      <h1>welcome to the dice game!</h1>
-      <img id="cube-img" src={require("../utils/Dice_Game_Starter/cube.png")} />
+      <h1>Welcome to the dice game!</h1>
+      <img id="cube-img" src={require("../utils/cube.png")} alt="dice" />
       <div className="main-content flex-row">
         <WinsChart
           loadWinsOnRefresh={loadWinsOnRefresh}

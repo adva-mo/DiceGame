@@ -6,22 +6,20 @@ import "./cube.css";
 const LOCAL_STORAGE_KEY = "diceGame.wins";
 
 function Cube({
-  numberOfCubes,
-  setp1turn,
-  setTotalPoints,
-  setCurrentPoints,
+  numberOfCubes, //
+  setp1turn, //
+  setCurrentPoints, //
   currentPoints,
-  setP2totalPoints,
-  setP1totalPoints,
-  target,
-  setRound,
+  setP2totalPoints, //
+  setP1totalPoints, //
+  target, //
   totalPoints,
-  setWins,
-  wins,
-  p1turn,
-  setP1globalPoints,
-  setP2globalPoints,
-  names,
+  setWins, //
+  wins, //
+  p1turn, //
+  setP1globalPoints, //
+  setP2globalPoints, //
+  names, //
 }) {
   const [cubes, setCubes] = useState([]);
 
@@ -59,7 +57,9 @@ function Cube({
       newRound();
       return;
     }
-    setTotalPoints((prev) => prev + currentPoints);
+    p1turn
+      ? setP1totalPoints((prev) => prev + currentPoints)
+      : setP2totalPoints((prev) => prev + currentPoints);
     setCurrentPoints((prev) => 0);
     setp1turn((prev) => !prev);
   };
@@ -68,7 +68,7 @@ function Cube({
     setCurrentPoints((prev) => 0);
     setP1totalPoints((prev) => 0);
     setP2totalPoints((prev) => 0);
-    setRound((prev) => prev + 1);
+    // setRound((prev) => prev + 1);
   };
 
   const loosingHandle = () => {
@@ -124,7 +124,7 @@ function Cube({
               <img
                 className="dice-img"
                 key={i}
-                src={require(`../../utils/Dice_Game_Starter/dice-${number}.png`)}
+                src={require(`../../utils/dice-${number}.png`)}
               />
             </>
           );

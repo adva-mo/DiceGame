@@ -8,7 +8,6 @@ function GamePage({
   SetDisplayedPage,
   setp1turn,
   p1turn,
-  setRound,
   names,
   numberOfCubes,
   setWins,
@@ -43,30 +42,38 @@ function GamePage({
   return (
     <div className="game-page">
       <div className="players-container flex-row">
-        <Player key={"p1"} {...app.player1} setp1turn={setp1turn} />
+        <Player
+          key={"p1"}
+          {...app.player1}
+          // p1turn={p1turn}
+          // className={p1turn ? "selected" : ""}
+        />
         <button id="back-to-chart" onClick={backToSettingsHandler}>
           back to settings
         </button>
-        <Player key={"p2"} {...app.player2} setp1turn={setp1turn} />
+        <Player
+          key={"p2"}
+          {...app.player2}
+          // p1turn={p1turn}
+          // className={!p1turn ? "selected" : ""}
+        />
       </div>
       <>
         <Cube
           {...(p1turn ? app.player1 : app.player2)}
           numberOfCubes={numberOfCubes}
           target={names[2]}
+          names={names}
           p1turn={p1turn}
+          // currentPoints={p1turn ? p1currentPoints : p2currentPoints}
           setp1turn={setp1turn}
           setP1totalPoints={setP1totalPoints}
           setP2totalPoints={setP2totalPoints}
           setCurrentPoints={p1turn ? setP1currentPoints : setP2currentPoints}
-          setTotalPoints={p1turn ? setP1totalPoints : setP2totalPoints}
-          totalPoints={p1turn ? p1totalPoints : p2totalPoints}
-          setRound={setRound}
-          setWins={setWins}
-          wins={wins}
-          names={names}
           setP1globalPoints={setP1globalPoints}
           setP2globalPoints={setP2globalPoints}
+          setWins={setWins}
+          wins={wins}
         />
       </>
     </div>

@@ -7,7 +7,6 @@ import "./App.css";
 function App() {
   const [displayedPage, SetDisplayedPage] = useState(null);
   const [p1turn, setp1turn] = useState(true);
-  const [round, setRound] = useState(0);
   const [wins, setWins] = useState({});
 
   const [names, setNames] = useState({
@@ -27,7 +26,6 @@ function App() {
           setp1turn={setp1turn}
           target={names[2]}
           numberOfCubes={names.numberOfCubes}
-          setRound={setRound}
           setWins={setWins}
           wins={wins}
         />
@@ -37,7 +35,6 @@ function App() {
           setNames={setNames}
           setWins={setWins}
           wins={wins}
-          // loadWinsOnRefresh={loadWinsOnRefresh}
         />
       )}
     </>

@@ -2,6 +2,7 @@
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  margin-bottom: 1rem;
 }
 .button-wrapper button {
   margin: 0 1rem;
@@ -15,6 +16,7 @@
   border-width: 5px 0 0 0;
   border-radius: 50%;
   flex-wrap: wrap;
+  height: 3rem;
 }
 .cube-game-play {
   height: 100%;

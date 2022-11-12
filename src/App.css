@@ -6,7 +6,8 @@
   --table-green: #076b2c;
 }
 body {
-  background-color: #fff5e4;
+  background: url("../src/utils/v748-toon-103.jpg") no-repeat center
+    center/cover;
   font-family: "Roboto", sans-serif;
   color: #fcfdf2;
 }

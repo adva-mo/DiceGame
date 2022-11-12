@@ -9,8 +9,8 @@ function PlayerSelect({ SetDisplayedPage, setNames }) {
   const handlePlayButton = (e) => {
     e.preventDefault();
     setNames({
-      player1: name1.current.value || "player 1",
-      player12: name2.current.value || "player 2",
+      player1: name1.current.value || "Player 1",
+      player12: name2.current.value || "Player 2",
       target: Number(target.current.value) || 100,
       numberOfCubes: Number(numberOfCubes.current.value) || 2,
     });
@@ -20,11 +20,11 @@ function PlayerSelect({ SetDisplayedPage, setNames }) {
   return (
     <div className="game-settings-form ">
       <form className="settings-form flex-column">
-        <label>player 1 name</label>
+        <label>player 1 name:</label>
         <input ref={name1} type="text"></input>
-        <label>player 2 name</label>
+        <label>player 2 name:</label>
         <input ref={name2} type="text"></input>
-        <label>choose target</label>
+        <label>choose target:</label>
         <input
           type="number"
           name="target"
@@ -34,7 +34,7 @@ function PlayerSelect({ SetDisplayedPage, setNames }) {
           step="100"
           ref={target}
         />
-        <label>choose number of cubes</label>
+        <label>choose number of dice:</label>
         <input
           type="number"
           name="cubes"

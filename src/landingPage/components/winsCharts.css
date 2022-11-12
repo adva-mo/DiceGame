@@ -1,0 +1,25 @@
+.wins-chart-container {
+  background-color: #00c2c7;
+  border: 1px solid #97ebdb;
+  border-radius: 10px;
+  height: min-content;
+  padding: 1rem;
+  width: 40%;
+  color: #fffdf9;
+  gap: 0.3rem;
+}
+ul {
+  font-size: x-large;
+  text-align: center;
+  font-weight: bold;
+}
+.wins-chart-container li {
+  list-style: none;
+  margin-top: 0.3rem;
+}
+#winner-img {
+  text-align: center;
+}
+.wins-chart-container span {
+  color: var(--dark-red);
+}

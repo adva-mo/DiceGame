@@ -2,7 +2,7 @@
   background-color: var(--table-green);
   margin: 1rem 1rem;
   border-radius: 10px;
-  height: 70vh;
+  height: 90%;
   margin-bottom: 0;
   outline: 7px solid #630606;
   padding-top: 0.3rem;
@@ -13,6 +13,8 @@
 }
 .players-container button {
   height: min-content;
+  margin-top: 0.5rem;
+  width: 6rem;
 }
 .game-page button {
   background-color: #d9ce3f;
@@ -26,4 +28,9 @@
 .game-page button:hover {
   color: #630606;
   background-color: #c8bf38;
+}
+@media (max-width: 500px) {
+  .game-page {
+    height: 100%;
+  }
 }
