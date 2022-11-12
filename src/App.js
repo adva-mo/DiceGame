@@ -27,13 +27,13 @@ function App() {
     if (storedWins) setWins(storedWins);
   }, []);
 
-  useEffect(
-    function addWinToLocal() {
-      //* add item to local storage every time an item is added to the 'wins' chart.
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(wins));
-    },
-    [wins]
-  );
+  // useEffect(
+  //   function addWinToLocal() {
+  //     //* add item to local storage every time an item is added to the 'wins' chart.
+  //     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(wins));
+  //   },
+  //   [wins]
+  // );
 
   return (
     <>

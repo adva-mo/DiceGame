@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import getRandom1to6 from "../../utils/utils";
+const LOCAL_STORAGE_KEY = "diceGame.wins";
 
 function Cube({
   numberOfCubes,
@@ -77,7 +78,7 @@ function Cube({
       else wins[names[0]] = 1;
       setP1globalPoints((prev) => prev + 1);
     }
-    setWins(...wins);
+    setWins({ ...wins });
   };
   const winningHandle = () => {
     if (p1turn) {
@@ -89,8 +90,16 @@ function Cube({
       else wins[names[1]] = 1;
       setP1globalPoints((prev) => prev + 1);
     }
-    setWins(...wins);
+    setWins({ ...wins });
   };
+
+  useEffect(
+    function addWinToLocal() {
+      //* add item to local storage every time an item is added to the 'wins' chart.
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(wins));
+    },
+    [wins]
+  );
 
   return (
     <div className="flex-column">
