@@ -1,16 +1,29 @@
-.player {
-  flex-grow: 1;
-}
 .game-page {
   background-color: var(--table-green);
-  margin: 0.5rem 0.5rem;
+  margin: 1rem 1rem;
   border-radius: 10px;
-  height: 100vh;
+  height: 70vh;
   margin-bottom: 0;
+  outline: 7px solid #630606;
+  padding-top: 0.3rem;
 }
-#root {
-  height: 100%;
+
+.players-container {
+  height: 50%;
 }
-img {
-  width: 3rem;
+.players-container button {
+  height: min-content;
+}
+.game-page button {
+  background-color: #d9ce3f;
+  border: none;
+  color: #890f0d;
+  padding: 0.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+.game-page button:hover {
+  color: #630606;
+  background-color: #c8bf38;
 }

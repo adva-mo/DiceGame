@@ -1,0 +1,14 @@
+.player {
+  flex-grow: 1;
+  margin: 1rem;
+  align-items: center;
+  gap: 0.3rem;
+}
+.current-points-container {
+  margin-top: 1rem;
+  background-color: #890f0d;
+  padding: 1rem;
+  border-radius: 2px;
+  color: #d9ce3f;
+  font-size: larger;
+}

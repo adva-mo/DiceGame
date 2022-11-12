@@ -1,0 +1,25 @@
+.button-wrapper {
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.button-wrapper button {
+  margin: 0 1rem;
+}
+.cubes-container {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 2rem;
+  border: 1px solid #630606;
+  border-width: 5px 0 0 0;
+  border-radius: 50%;
+  flex-wrap: wrap;
+}
+.cube-game-play {
+  height: 100%;
+}
+.dice-img {
+  width: 3rem;
+  margin: 1rem 0.5em;
+}

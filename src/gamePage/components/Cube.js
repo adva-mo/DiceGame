@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import getRandom1to6 from "../../utils/utils";
+
+import "./cube.css";
+
 const LOCAL_STORAGE_KEY = "diceGame.wins";
 
 function Cube({
@@ -102,23 +105,24 @@ function Cube({
   );
 
   return (
-    <div className="flex-column">
-      <div className="">
+    <div className="flex-column cube-game-play">
+      <div className="button-wrapper flex-row">
         <button id="roll-dice" onClick={rollDiceHandler}>
-          roll dice
+          roll dice <i class="fa-solid fa-dice"></i>
         </button>
         <button id="hold" onClick={holdHandler}>
-          hold
+          hold <i class="fa-solid fa-hand-holding"></i>
         </button>
         <button id="new-game" onClick={newRound}>
           new game
         </button>
       </div>
-      <div className="flex-row">
+      <div className="flex-row cubes-container">
         {cubes.map((number, i) => {
           return (
             <>
               <img
+                className="dice-img"
                 key={i}
                 src={require(`../../utils/Dice_Game_Starter/dice-${number}.png`)}
               />

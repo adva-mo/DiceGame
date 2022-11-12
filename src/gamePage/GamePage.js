@@ -42,14 +42,14 @@ function GamePage({
 
   return (
     <div className="game-page">
-      <div className="flex-row">
+      <div className="players-container flex-row">
         <Player key={"p1"} {...app.player1} setp1turn={setp1turn} />
         <button id="back-to-chart" onClick={backToSettingsHandler}>
           back to settings
         </button>
         <Player key={"p2"} {...app.player2} setp1turn={setp1turn} />
       </div>
-      <div className="cubes-container flex-row">
+      <>
         <Cube
           {...(p1turn ? app.player1 : app.player2)}
           numberOfCubes={numberOfCubes}
@@ -64,11 +64,11 @@ function GamePage({
           setRound={setRound}
           setWins={setWins}
           wins={wins}
-          names={names} //array of two name
+          names={names}
           setP1globalPoints={setP1globalPoints}
           setP2globalPoints={setP2globalPoints}
         />
-      </div>
+      </>
     </div>
   );
 }
