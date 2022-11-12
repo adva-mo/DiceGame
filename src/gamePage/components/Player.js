@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import CurrentPoints from "./CurrentPoints";
-// import Cube from "./Cube";
 
 function Player({ name, totalPoints, currentPoints, setp1turn }) {
   return (

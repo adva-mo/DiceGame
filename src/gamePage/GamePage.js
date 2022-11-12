@@ -35,7 +35,7 @@ function GamePage({
   };
 
   return (
-    <>
+    <div className="game-page">
       <div className="flex-row">
         <Player key={"p1"} {...app.player1} setp1turn={setp1turn} />
         <button id="back-to-chart" onClick={backToSettingsHandler}>
@@ -58,7 +58,7 @@ function GamePage({
           setRound={setRound}
         />
       </div>
-    </>
+    </div>
   );
 }
 

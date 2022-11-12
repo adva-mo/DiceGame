@@ -2,4 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  --table-green: rgb(32, 80, 71);
+}
+body {
+  /* background: url("./utils/bg.jpg"); */
+  background-color: rgb(141, 127, 91);
 }

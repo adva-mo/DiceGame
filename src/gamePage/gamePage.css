@@ -1,3 +1,16 @@
 .player {
   flex-grow: 1;
 }
+.game-page {
+  background-color: var(--table-green);
+  margin: 0.5rem 0.5rem;
+  border-radius: 10px;
+  height: 100vh;
+  margin-bottom: 0;
+}
+#root {
+  height: 100%;
+}
+img {
+  width: 3rem;
+}

@@ -22,9 +22,7 @@ function Cube({
       cubes.push(dice);
       setCubes((prev) => [...cubes]);
     }
-    // console.log(cubes);
     displayCubes(cubes);
-    // displayCubes([6, 6, 6, 6, 6]);
   };
 
   const displayCubes = (arrOfPoints) => {
@@ -83,7 +81,7 @@ function Cube({
             <>
               <img
                 key={i}
-                src={require(`../../Dice_Game_Starter/dice-${number}.png`)}
+                src={require(`../../utils/Dice_Game_Starter/dice-${number}.png`)}
               />
             </>
           );
