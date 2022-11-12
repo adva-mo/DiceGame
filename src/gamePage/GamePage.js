@@ -11,17 +11,24 @@ function GamePage({
   setRound,
   names,
   numberOfCubes,
+  setWins,
+  wins,
 }) {
   const [p1currentPoints, setP1currentPoints] = useState(0);
   const [p2currentPoints, setP2currentPoints] = useState(0);
   const [p1totalPoints, setP1totalPoints] = useState(0);
   const [p2totalPoints, setP2totalPoints] = useState(0);
-
+  // const [globalPoints,setGlobalPoints]=useState([])
+  con;
+  // console.log(setWins);
   const app = {
     player1: {
       name: names[0],
       totalPoints: p1totalPoints,
       currentPoints: p1currentPoints,
+      setP1totalPoints: setP1totalPoints,
+      setP1currentPoints: setP1currentPoints,
+      g,
     },
     player2: {
       name: names[1],
@@ -56,6 +63,8 @@ function GamePage({
           setTotalPoints={p1turn ? setP1totalPoints : setP2totalPoints}
           totalPoints={p1turn ? p1totalPoints : p2totalPoints}
           setRound={setRound}
+          setWins={setWins}
+          wins={wins}
         />
       </div>
     </div>

@@ -12,6 +12,9 @@ function Cube({
   target,
   setRound,
   totalPoints,
+  setWins,
+  name,
+  wins,
 }) {
   const [cubes, setCubes] = useState([]);
 
@@ -39,9 +42,15 @@ function Cube({
   };
 
   const holdHandler = () => {
+    // if (wins[name]) wins[name] += 1;
+    // else wins[name] = 1;
+
+    console.log(wins);
+    // setWins({});
     if (currentPoints === 0) return;
     if (currentPoints + totalPoints > target) {
       console.log("you lost");
+      winningHandle();
       newRound();
       return;
     } else if (currentPoints + totalPoints === target) {
@@ -49,6 +58,7 @@ function Cube({
       newRound();
       return;
     }
+
     setTotalPoints((prev) => prev + currentPoints);
     setCurrentPoints((prev) => 0);
     setp1turn((prev) => !prev);
@@ -60,6 +70,13 @@ function Cube({
     setP1totalPoints((prev) => 0);
     setP2totalPoints((prev) => 0);
     setRound((prev) => prev + 1);
+  };
+
+  const winningHandle = () => {
+    if (wins[name]) wins[name] += 1;
+    else wins[name] = 1;
+    console.log(wins);
+    setWins(wins);
   };
 
   return (
