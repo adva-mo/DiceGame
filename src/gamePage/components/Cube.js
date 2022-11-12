@@ -13,8 +13,11 @@ function Cube({
   setRound,
   totalPoints,
   setWins,
-  name,
   wins,
+  p1turn,
+  setP1globalPoints,
+  setP2globalPoints,
+  names,
 }) {
   const [cubes, setCubes] = useState([]);
 
@@ -42,41 +45,51 @@ function Cube({
   };
 
   const holdHandler = () => {
-    // if (wins[name]) wins[name] += 1;
-    // else wins[name] = 1;
-
-    console.log(wins);
-    // setWins({});
     if (currentPoints === 0) return;
     if (currentPoints + totalPoints > target) {
-      console.log("you lost");
-      winningHandle();
+      loosingHandle();
       newRound();
       return;
     } else if (currentPoints + totalPoints === target) {
-      console.log("you win");
+      winningHandle();
       newRound();
       return;
     }
-
     setTotalPoints((prev) => prev + currentPoints);
     setCurrentPoints((prev) => 0);
     setp1turn((prev) => !prev);
   };
 
   const newRound = () => {
-    //!add points to local storge if winning
     setCurrentPoints((prev) => 0);
     setP1totalPoints((prev) => 0);
     setP2totalPoints((prev) => 0);
     setRound((prev) => prev + 1);
   };
 
+  const loosingHandle = () => {
+    if (p1turn) {
+      if (wins[names[1]]) wins[names[1]] += 1;
+      else wins[names[1]] = 1;
+      setP2globalPoints((prev) => prev + 1);
+    } else {
+      if (wins[names[0]]) wins[names[0]] += 1;
+      else wins[names[0]] = 1;
+      setP1globalPoints((prev) => prev + 1);
+    }
+    setWins(...wins);
+  };
   const winningHandle = () => {
-    if (wins[name]) wins[name] += 1;
-    else wins[name] = 1;
-    console.log(wins);
-    setWins(wins);
+    if (p1turn) {
+      if (wins[names[0]]) wins[names[0]] += 1;
+      else wins[names[0]] = 1;
+      setP2globalPoints((prev) => prev + 1);
+    } else {
+      if (wins[names[1]]) wins[names[1]] += 1;
+      else wins[names[1]] = 1;
+      setP1globalPoints((prev) => prev + 1);
+    }
+    setWins(...wins);
   };
 
   return (

@@ -18,20 +18,21 @@ function GamePage({
   const [p2currentPoints, setP2currentPoints] = useState(0);
   const [p1totalPoints, setP1totalPoints] = useState(0);
   const [p2totalPoints, setP2totalPoints] = useState(0);
-  // const [globalPoints,setGlobalPoints]=useState([])
-  // console.log(setWins);
+  const [P1globalPoints, setP1globalPoints] = useState(0);
+  const [P2globalPoints, setP2globalPoints] = useState(0);
+
   const app = {
     player1: {
       name: names[0],
       totalPoints: p1totalPoints,
       currentPoints: p1currentPoints,
-      setP1totalPoints: setP1totalPoints,
-      setP1currentPoints: setP1currentPoints,
+      globalPoints: P1globalPoints,
     },
     player2: {
       name: names[1],
       totalPoints: p2totalPoints,
       currentPoints: p2currentPoints,
+      globalPoints: P2globalPoints,
     },
   };
 
@@ -63,6 +64,9 @@ function GamePage({
           setRound={setRound}
           setWins={setWins}
           wins={wins}
+          names={names} //array of two name
+          setP1globalPoints={setP1globalPoints}
+          setP2globalPoints={setP2globalPoints}
         />
       </div>
     </div>
