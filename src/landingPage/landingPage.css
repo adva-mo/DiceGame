@@ -1,11 +1,70 @@
-.wins-chart-container,
-.game-settings-form {
-  flex-grow: 1;
+* {
+  --dark-red: #d32d2d;
+  --red: #ef4a4a;
+  --light-red: #f36363;
 }
 .landing-page {
   height: 100vh;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  color: var(--light-red);
 }
 .main-content {
   width: 100%;
   height: 80%;
+  gap: 3rem;
+  justify-content: space-around;
+}
+#cube-img {
+  width: 7rem;
+}
+.wins-chart-container {
+  background-color: #00c2c7;
+  border: 1px solid #97ebdb;
+  border-radius: 10px;
+  height: min-content;
+  padding: 1rem;
+  width: 40%;
+  color: #fffdf9;
+  gap: 0.3rem;
+}
+ul {
+  font-size: x-large;
+  text-align: center;
+}
+.wins-chart-container li {
+  list-style: none;
+  margin-top: 0.3rem;
+}
+#winner-img {
+  text-align: center;
+}
+.game-settings-form {
+  margin-right: 3rem;
+}
+.settings-form {
+  gap: 0.3rem;
+  width: max-content;
+}
+.settings-form > input {
+  background-color: rgba(243, 99, 99, 0.2);
+  outline: none;
+  border: 1px solid var(--dark-red);
+  border-radius: 5px;
+  height: 1.5rem;
+}
+.settings-form > button {
+  background-color: var(--dark-red);
+  border: none;
+  height: 2rem;
+  color: #91e7ea;
+  font-size: x-large;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+.settings-form > button:hover {
+  background-color: var(--red);
 }

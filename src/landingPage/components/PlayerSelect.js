@@ -19,7 +19,7 @@ function PlayerSelect({ SetDisplayedPage, setNames }) {
 
   return (
     <div className="game-settings-form ">
-      <form className="flex-column">
+      <form className="settings-form flex-column">
         <label>player 1 name</label>
         <input ref={name1} type="text"></input>
         <label>player 2 name</label>

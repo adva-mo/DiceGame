@@ -1,10 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  --table-green: rgb(32, 80, 71);
+  --table-green: #076b2c;
 }
 body {
   /* background: url("./utils/bg.jpg"); */
-  background-color: rgb(141, 127, 91);
+  background-color: #fff5e4;
+  font-family: "Roboto", sans-serif;
+  color: #fffdf9;
 }
